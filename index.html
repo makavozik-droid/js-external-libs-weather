@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Magic Weather ✨</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">Magic Weather ✨</h1>
+      <p class="subtitle">Казковий прогноз погоди для вашого міста</p>
+    </header>
+
+    <main class="main">
+      <section class="search-section">
+        <form id="city-form">
+          <label for="city-input">Введіть назву міста:</label>
+          <input
+            type="text"
+            id="city-input"
+            placeholder="Наприклад: Шостка"
+            required
+          />
+          <button type="submit">Показати погоду</button>
+        </form>
+      </section>
+
+      <section class="cards-section">
+        <h2>Прогноз погоди</h2>
+        <div id="weather-cards" class="cards-container">
+          <!-- Тут будуть картки з погодою -->
+        </div>
+      </section>
+
+      <section class="animations-section">
+        <h2>Магічні анімації (GSAP)</h2>
+        <div id="animations-gallery">
+          <!-- Тут пізніше додамо 5 анімацій -->
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
