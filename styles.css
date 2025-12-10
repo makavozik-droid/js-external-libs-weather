@@ -80,3 +80,60 @@ button[type="submit"] {
   padding: 12px;
   backdrop-filter: blur(6px);
 }
+.gsap-demo-section {
+  margin-top: 40px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 12px;
+}
+
+.gsap-demo-section h2 {
+  margin-bottom: 8px;
+}
+
+.gsap-demo-section p {
+  margin-bottom: 12px;
+}
+
+.gsap-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.gsap-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.box-1 {
+  background: rgba(255, 99, 132, 0.8);
+}
+.box-2 {
+  background: rgba(54, 162, 235, 0.8);
+}
+.box-3 {
+  background: rgba(75, 192, 192, 0.8);
+}
+
+.gsap-demo-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gsap-demo-buttons button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}

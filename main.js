@@ -1,14 +1,35 @@
-console.log("Magic Weather is ready");
+import { gsap } from "gsap";
 
+console.log("Magic Weather with GSAP ✨");
+
+// Базові елементи
 const form = document.getElementById("city-form");
 const input = document.getElementById("city-input");
 const cardsContainer = document.getElementById("weather-cards");
 const statusEl = document.getElementById("status-message");
 
-if (!form || !input || !cardsContainer) {
-  console.error("Не знайдено елементи форми або контейнер для карток");
+if (!form || !input || !cardsContainer || !statusEl) {
+  console.error("Не знайдено необхідні елементи на сторінці");
 }
 
+// Анімація заголовка при завантаженні сторінки
+gsap.from(".header", {
+  y: -40,
+  opacity: 0,
+  duration: 0.8,
+  ease: "power2.out",
+});
+
+// Легка безкінечна "магія" заголовка (невеликий пульс)
+gsap.to(".title", {
+  scale: 1.03,
+  duration: 2,
+  yoyo: true,
+  repeat: -1,
+  ease: "sine.inOut",
+});
+
+// Обробка форми
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -20,6 +41,8 @@ form.addEventListener("submit", (event) => {
 
   getCityCoordinates(cityName);
 });
+
+// ---------- API: геокодинг + погода (fetch) ----------
 
 async function getCityCoordinates(city) {
   const url = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(
@@ -95,4 +118,77 @@ function renderWeatherCards(daily, cityName) {
   if (dates.length === 0) {
     statusEl.textContent = "Немає даних для відображення.";
   }
+
+  // GSAP-анімація карток після рендеру
+  animateWeatherCards();
 }
+
+// ---------- GSAP анімація карток погоди ----------
+
+function animateWeatherCards() {
+  gsap.from(".weather-card", {
+    opacity: 0,
+    y: 30,
+    duration: 0.5,
+    stagger: 0.1,
+    ease: "power2.out",
+  });
+}
+
+// ---------- GSAP демо-анімації (5 штук) ----------
+
+// 1. Пульс коробок (масштаб вгору-вниз)
+const pulseBtn = document.getElementById("gsap-pulse-btn");
+pulseBtn.addEventListener("click", () => {
+  gsap.to(".gsap-box", {
+    scale: 1.2,
+    duration: 0.3,
+    yoyo: true,
+    repeat: 1,
+    ease: "power1.inOut",
+  });
+});
+
+// 2. Струсити коробки (маленький shake)
+const shakeBtn = document.getElementById("gsap-shake-btn");
+shakeBtn.addEventListener("click", () => {
+  gsap.fromTo(
+    ".gsap-box",
+    { x: -5 },
+    { x: 5, duration: 0.05, yoyo: true, repeat: 7, ease: "power1.inOut" }
+  );
+});
+
+// 3. Обертання коробок
+const spinBtn = document.getElementById("gsap-spin-btn");
+spinBtn.addEventListener("click", () => {
+  gsap.to(".gsap-box", {
+    rotationY: "+=360",
+    duration: 0.8,
+    ease: "back.out(1.7)",
+  });
+});
+
+// 4. Розкидати хаотично
+const randomBtn = document.getElementById("gsap-random-btn");
+randomBtn.addEventListener("click", () => {
+  gsap.to(".gsap-box", {
+    x: () => gsap.utils.random(-80, 80),
+    y: () => gsap.utils.random(-40, 40),
+    duration: 0.6,
+    ease: "power2.out",
+  });
+});
+
+// 5. Повернути як було
+const resetBtn = document.getElementById("gsap-reset-btn");
+resetBtn.addEventListener("click", () => {
+  gsap.to(".gsap-box", {
+    x: 0,
+    y: 0,
+    rotationY: 0,
+    scale: 1,
+    duration: 0.5,
+    ease: "power2.out",
+  });
+});
