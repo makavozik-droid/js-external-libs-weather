@@ -80,3 +80,41 @@ button[type="submit"] {
   padding: 12px;
   backdrop-filter: blur(6px);
 }
+.jquery-demo-section {
+  margin-top: 40px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 12px;
+}
+
+.jquery-demo-section h2 {
+  margin-bottom: 12px;
+}
+
+.jquery-demo-section button {
+  margin: 4px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.info-box {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jquery-demo-buttons {
+  margin-top: 10px;
+}
+
+.weather-card.highlight {
+  outline: 2px solid gold;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+}
