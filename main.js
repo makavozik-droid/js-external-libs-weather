@@ -1,4 +1,6 @@
-console.log("Magic Weather is ready");
+import axios from "axios";
+
+console.log("Magic Weather with Axios");
 
 const form = document.getElementById("city-form");
 const input = document.getElementById("city-input");
@@ -28,8 +30,8 @@ async function getCityCoordinates(city) {
 
   try {
     console.log("Запит геокодингу:", url);
-    const response = await fetch(url);
-    const data = await response.json();
+    const response = await axios.get(url);
+    const data = response.data;
     console.log("Відповідь геокодингу:", data);
 
     if (!data.results || data.results.length === 0) {
@@ -52,8 +54,8 @@ async function getWeather(lat, lon, cityName) {
 
   try {
     console.log("Запит погоди:", url);
-    const response = await fetch(url);
-    const data = await response.json();
+    const response = await axios.get(url);
+    const data = response.data;
     console.log("Відповідь погоди:", data);
 
     if (!data.daily) {
