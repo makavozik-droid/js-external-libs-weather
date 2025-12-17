@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Magic Weather</title>
+    <script type="module" crossorigin src="/js-external-libs-weather/assets/index-iwzKPGna.js"></script>
+    <link rel="stylesheet" crossorigin href="/js-external-libs-weather/assets/index-DGzB8Xto.css">
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">Magic Weather</h1>
+      <p class="subtitle">Казковий прогноз погоди для вашого міста</p>
+    </header>
+      <section class="gsap-demo-section">
+        <h2>GSAP демо-анімації</h2>
+        <p>Натисніть кнопки, щоб побачити різні ефекти:</p>
+
+        <div class="gsap-boxes">
+          <div class="gsap-box box-1">1</div>
+          <div class="gsap-box box-2">2</div>
+          <div class="gsap-box box-3">3</div>
+        </div>
+
+        <div class="gsap-demo-buttons">
+          <button id="gsap-pulse-btn">Пульс коробок</button>
+          <button id="gsap-shake-btn">Струсити</button>
+          <button id="gsap-spin-btn">Обертання</button>
+          <button id="gsap-random-btn">Розкидати хаотично</button>
+          <button id="gsap-reset-btn">Повернути як було</button>
+        </div>
+      </section>
+
+    <main class="main">
+      <div id="weather-animation-layer"></div>
+      <section class="search-section">
+        <form id="city-form">
+          <label for="city-input">Введіть назву міста:</label>
+          <input
+            type="text"
+            id="city-input"
+            placeholder="Наприклад: Шостка"
+            required
+          />
+          <button type="submit">Показати погоду</button>
+        </form>
+        <p id="status-message" class="status-message"></p>
+      </section>
+
+      <section class="cards-section">
+        <h2>Прогноз погоди</h2>
+        <div id="weather-cards" class="cards-container">
+          <!-- Сюди будемо додавати картки з погодою -->
+        </div>
+      </section>
+    </main>
+
+  </body>
+</html>
