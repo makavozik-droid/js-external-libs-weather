@@ -1,3 +1,8 @@
+// Hide GSAP demo on GitHub Pages
+if (location.hostname.includes("github.io")) {
+  const demo = document.querySelector("[data-hide-on-pages]");
+  if (demo) demo.style.display = "none";
+}
 import { gsap } from "gsap";
 
 console.log("Magic Weather with GSAP ✨");
